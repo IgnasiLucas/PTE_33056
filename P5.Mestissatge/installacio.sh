@@ -44,6 +44,11 @@ if [ -z $(which evalAdmix) ]; then
    ln -s $HOME/bin/evalAdmix_v$EA_VERSION/evalAdmix $HOME/bin/evalAdmix
 fi
 
+if [ -d $HOME/.local ]; then
+   if [ ! -d $HOME/.local/bin ]; then mkdir $HOME/.local/bin; fi
+   cp $HOME/bin/* $HOME/.local/bin/
+fi
+
 if [ -e $HOME/.profile ]; then
    . $HOME/.profile
 fi
