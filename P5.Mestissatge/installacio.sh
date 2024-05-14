@@ -6,7 +6,7 @@
 # "admixture" i "evalAdmix" per la realització de la pràctica amb
 # ordinador número 5 de l'assignatura "Principals Transicions Evolutives".
 # Distribuït amb llicència GPL 3.0, sense garanties de què funcione.
-# Pot quedar obsolet molt ràpidament
+# Pot quedar obsolet molt ràpidament.
 
 if [ ! -d $HOME/bin ]; then mkdir $HOME/bin; fi
 if [ -e $HOME/.profile ]; then . $HOME/.profile; fi
@@ -42,13 +42,4 @@ if [ -z $(which evalAdmix) ]; then
       if [ -e evalAdmix ]; then rm evalAdmix; fi
    cd $SCRIPT_DIR
    ln -s $HOME/bin/evalAdmix_v$EA_VERSION/evalAdmix $HOME/bin/evalAdmix
-fi
-
-if [ -d $HOME/.local ]; then
-   if [ ! -d $HOME/.local/bin ]; then mkdir $HOME/.local/bin; fi
-   cp $HOME/bin/* $HOME/.local/bin/
-fi
-
-if [ -e $HOME/.profile ]; then
-   . $HOME/.profile
 fi
