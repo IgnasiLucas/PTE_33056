@@ -1,7 +1,7 @@
 ---
 title: "Tema 14. Coalescència"
 author: "J. Ignacio Lucas Lledó"
-date: "21/4/2022"
+date: "`r format(Sys.Date(), '%d/%m/%Y')`"
 output: ioslides_presentation
 ---
 
