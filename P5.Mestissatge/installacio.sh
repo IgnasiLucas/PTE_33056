@@ -11,16 +11,23 @@
 if [ ! -d $HOME/bin ]; then mkdir $HOME/bin; fi
 if [ -e $HOME/.profile ]; then . $HOME/.profile; fi
 
+# Comprova l'enllaç a la descàrrega en la web https://www.cog-genomics.org/plink2/
+# i actualitza si cal la variable PLINK_SOURCE:
+PLINK_SOURCE=https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20241022.zip
+
+PLINK_DIR=$(basename -s .zip $PLINK_SOURCE)
 if [ -z $(which plink) ]; then
-   if [ ! -d $HOME/bin/plink_linux_x86_64_20231211 ]; then
-      mkdir $HOME/bin/plink_linux_x86_64_20231211
+   if [ ! -d $HOME/bin/$PLINK_DIR ]; then
+      mkdir $HOME/bin/$PLINK_DIR
    fi
-   wget https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20231211.zip
-   unzip plink_linux_x86_64_20231211.zip -d $HOME/bin/plink_linux_x86_64_20231211
-   ln -s $HOME/bin/plink_linux_x86_64_20231211/plink $HOME/bin/plink
-   rm plink_linux_x86_64_20231211.zip
+   wget $PLINK_SOURCE
+   unzip $PLINK_DIR.zip -d $HOME/bin/$PLINK_DIR
+   ln -s $HOME/bin/$PLINK_DIR/plink $HOME/bin/plink
+   rm $PLINK_DIR.zip
 fi
 
+# David Alexander és un dels autors. El software també es pot trobar a la pàgina
+# de github de John November, l'altre autor: https://github.com/NovembreLab/admixture
 if [ -z $(which admixture) ]; then
    wget https://dalexander.github.io/admixture/binaries/admixture_linux-1.3.0.tar.gz
    tar -xzvf admixture_linux-1.3.0.tar.gz
