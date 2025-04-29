@@ -1,0 +1,28 @@
+PLINK v1.90b7.2 64-bit (11 Dec 2023)
+Options in effect:
+  --make-bed
+  --out filtered
+  --update-ids update_ids.txt
+  --vcf filtered.recode.vcf
+
+Hostname: gorgonzola
+Working directory: /home/joiglu/Documents/docencia/PTE_33056/P5.Mestissatge/descarrega
+Start time: Mon Apr 28 11:13:33 2025
+
+Random number seed: 1745831613
+15307 MB RAM detected; reserving 7653 MB for main workspace.
+--vcf: filtered-temporary.bed + filtered-temporary.bim + filtered-temporary.fam
+written.
+54315 variants loaded from .bim file.
+180 people (0 males, 0 females, 180 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to filtered.nosex .
+--update-ids: 180 people updated.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 180 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.991888.
+54315 variants and 180 people pass filters and QC.
+Note: No phenotypes present.
+--make-bed to filtered.bed + filtered.bim + filtered.fam ... done.
+
+End time: Mon Apr 28 11:13:34 2025
