@@ -13,8 +13,7 @@ if [ -e $HOME/.profile ]; then . $HOME/.profile; fi
 
 # Comprova l'enllaç a la descàrrega en la web https://www.cog-genomics.org/plink2/
 # i actualitza si cal la variable PLINK_SOURCE:
-PLINK_SOURCE=https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20241022.zip
-
+PLINK_SOURCE=https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20250819.zip
 PLINK_DIR=$(basename -s .zip $PLINK_SOURCE)
 if [ -z $(which plink) ]; then
    if [ ! -d $HOME/bin/$PLINK_DIR ]; then
@@ -29,12 +28,11 @@ fi
 # David Alexander és un dels autors. El software també es pot trobar a la pàgina
 # de github de John November, l'altre autor: https://github.com/NovembreLab/admixture
 if [ -z $(which admixture) ]; then
-   wget https://dalexander.github.io/admixture/binaries/admixture_linux-1.3.0.tar.gz
-   tar -xzvf admixture_linux-1.3.0.tar.gz
-   mv dist/admixture_linux-1.3.0 $HOME/bin/
-   ln -s $HOME/bin/admixture_linux-1.3.0/admixture $HOME/bin/admixture
-   rm -r dist
-   rm admixture_linux-1.3.0.tar.gz
+   wget https://dalexander.github.io/admixture/binaries/admixture_linux-1.4.0.tar.gz
+   tar -xzvf admixture_linux-1.4.0.tar.gz
+   mv admixture_linux-1.4.0 $HOME/bin/
+   ln -s $HOME/bin/admixture_linux-1.4.0/admixture $HOME/bin/admixture
+   rm admixture_linux-1.4.0.tar.gz
 fi
 
 if [ -z $(which evalAdmix) ]; then
